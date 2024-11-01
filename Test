@@ -22,7 +22,7 @@ local function loadMIDI(midiUrl)
 end
 
 local midiFile1Url = "https://votre-url-midi1.com/midi1.mid"
-local midiFile2Url = "https://drive.google.com/uc?id=1X9f2ehfg9PwtHKoC3HSNcNoG_jywsGK4"
+local midiFile2Url = "https://drive.google.com/uc?id=1MqPk6iF4HcU6Od8qr__77OcDXNKcd4P-"
 
 createButton("Play MIDI 1", UDim2.new(0, 50, 0, 50), midiFile1Url)
 createButton("Play MIDI 2", UDim2.new(0, 200, 0, 50), midiFile2Url)
