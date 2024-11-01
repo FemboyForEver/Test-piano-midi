@@ -1,0 +1,30 @@
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local gui = Instance.new("ScreenGui", player:WaitForChild("PlayerGui"))
+
+local function createButton(name, position, midiUrl)
+    local button = Instance.new("TextButton")
+    button.Size = UDim2.new(0, 100, 0, 50)
+    button.Position = position
+    button.Text = name
+    button.Parent = gui
+    
+    button.MouseButton1Click:Connect(function()
+        loadMIDI(midiUrl)
+    end)
+    
+    return button
+end
+
+local function loadMIDI(midiUrl)
+    local midiData = game:HttpGet(midiUrl)
+    print("MIDI data loaded:", midiData)
+end
+
+local midiFile1Url = "https://votre-url-midi1.com/midi1.mid"
+local midiFile2Url = "https://votre-url-midi2.com/midi2.mid"
+
+createButton("Play MIDI 1", UDim2.new(0, 50, 0, 50), midiFile1Url)
+createButton("Play MIDI 2", UDim2.new(0, 200, 0, 50), midiFile2Url)
+
+print("MIDI Player UI initialized.")
